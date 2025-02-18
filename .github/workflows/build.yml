@@ -1,9 +1,6 @@
 name: Build
 on:
-  push:
-    branches:
-      - master
-
+  workflow_dispatch:
 jobs:
   prepare_release:
     runs-on: ubuntu-latest
@@ -33,13 +30,16 @@ jobs:
       matrix:
         BOARD: [xiaomi-elish]
         DISTRO: [armbian]
-        FLAVOR: [ubuntu]
+        FLAVOR: [debian]
         BRANCH: [current]
+        BUILD_DESKTOP: [yes]
+        DESKTOP_ENVIRONMENT: [gnome]
+        EXPERT: [yes]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Upload Armbian image
-        uses: lgs3137/armbian-compile-action@main
+        uses: amazingfate/armbian-compile-action@main
         if: matrix.DISTRO == 'armbian'
         with:
           branch: ${{ matrix.BRANCH }}
