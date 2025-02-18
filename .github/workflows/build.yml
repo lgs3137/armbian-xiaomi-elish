@@ -31,7 +31,7 @@ jobs:
     needs: prepare_release
     strategy:
       matrix:
-        BOARD: [xiaomi-elish, oneplus-kebab]
+        BOARD: [xiaomi-elish]
         DISTRO: [armbian]
         FLAVOR: [ubuntu]
         BRANCH: [current]
@@ -39,7 +39,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Upload Armbian image
-        uses: amazingfate/armbian-compile-action@main
+        uses: lgs3137/armbian-compile-action@main
         if: matrix.DISTRO == 'armbian'
         with:
           branch: ${{ matrix.BRANCH }}
