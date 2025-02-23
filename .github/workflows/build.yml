@@ -31,7 +31,7 @@ jobs:
         BOARD: [xiaomi-elish]
         DISTRO: [armbian]
         FLAVOR: [ubuntu]
-        BRANCH: [current]
+        BRANCH: [edge]
         BUILD_DESKTOP: [yes]
         DESKTOP_ENVIRONMENT: [gnome]
         EXPERT: [yes]
