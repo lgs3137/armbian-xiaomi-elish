@@ -30,7 +30,7 @@ jobs:
       matrix:
         BOARD: [xiaomi-elish]
         DISTRO: [armbian]
-        FLAVOR: [ubuntu]
+        FLAVOR: [debian]
         BRANCH: [current]
     steps:
       - name: Checkout
